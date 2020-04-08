@@ -52,12 +52,12 @@ class AVLTree{
 
     Node *Insert(Node *root,int data){
 
-        Node *ptr = new Node(data);
         if(data < root->data){
             if(root->left != nullptr){
                 root->left = Insert(root->left,data);
             }
             else{
+                Node *ptr = new Node(data);
                 root->left = ptr;
             }
         }
@@ -66,6 +66,7 @@ class AVLTree{
                 root->right = Insert(root->right,data);
             }
             else{
+                Node *ptr = new Node(data);
                 root->right = ptr;
             }
         }
